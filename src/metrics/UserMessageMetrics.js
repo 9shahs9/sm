@@ -28,7 +28,7 @@ class UserMessageMetrics {
             let userData = usersMonthlyStat[user];
             userMonthlyAvgs[user] = this.getUserMonthlyAverage(userData);
         }
-        return userMonthlyAvgs;
+        return {'monthlyAveragePerUser' : userMonthlyAvgs};
     }
 
     monthlyCountsPerUser(){

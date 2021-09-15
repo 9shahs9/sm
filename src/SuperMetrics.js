@@ -5,7 +5,7 @@ const userStats = require('./metrics/UserMessageMetrics.js');
 
 
 class SuperMetrics {
-    metrics = [];
+    metrics = {};
 
     constructor(posts) {
         this.posts = posts;
@@ -17,17 +17,14 @@ class SuperMetrics {
     }
 
     computeAggs() {
-        let results = [];
-        
         let mStats = new monthlyStats(this.posts);
         let wStats = new weeklyStats(this.posts);
         let uStats = new userStats(this.posts);
 
-        results.push(mStats.compute());
-        results.push(wStats.compute());
-        results.push(uStats.compute());
+        this.metrics['monthlyStats'] = mStats.compute();
+        this.metrics['weeklyStats'] = wStats.compute();
+        this.metrics['userStats'] = uStats.compute();
         
-        this.metrics = results;
     }
 }
 

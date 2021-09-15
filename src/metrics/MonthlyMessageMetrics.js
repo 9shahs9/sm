@@ -16,7 +16,7 @@ class MessageMetricsMonthly {
             this.averageLength[d.getMonth()] = data.average;
             this.maxLength[d.getMonth()] = data.maxLen;
         }
-        return [{'averagePerMonth': this.averageLength}, {'longestPerMonth': this.maxLength}];
+        return {'averagePerMonth': this.averageLength, 'longestPerMonth': this.maxLength};
     }
 
     getAgg(post, current_metric) {
