@@ -18,6 +18,7 @@ TECHNICAL DEBT:
 4. Dynamic loading of various metric modules in SuperMetrics.js can be done programmatically using glob mechanism, Insufficient time to read and implement this feature.
 5. MonthlyMessageMetrics can be broken down into two modules, 1) AveragePostLength and 2) MaxLengths, but as the processing is similar, thought I can save one more loop through the posts.
 6. Error Handling is not implemented to be production ready.
+7. Parameterize number of times posts api is going to be called.
 
 ===========================================================================================================
 
