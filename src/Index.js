@@ -7,20 +7,16 @@ const beautify=require('json-beautify');
 // For caching token, need to break the Promise mechanism, which I have no clue how to do at moment.
 
 async function getToken(){
-    const auth = new Authenticator();
-    const token = await auth.getToken();
-    return token;
+    return await new Authenticator().getToken();
 }
 
 async function main(){
     try{
         let allPosts = [];
         let token = await getToken();
-        console.log(token);
         const posts = new Posts();
         
         // Loop through 10 times, to fetch posts.
-
         for (let i = 0; i < 10; i++){
             let myPosts = JSON.parse(await posts.getPosts(token,i)).data.posts;
             allPosts = allPosts.concat(myPosts);
