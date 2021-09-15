@@ -1,6 +1,7 @@
 const Authenticator = require('./Authentication.js');
 const Posts = require('./Posts.js');
 const SuperMetrics = require('./SuperMetrics.js');
+const beautify=require('json-beautify');
 
 // TODO: Authenticator must ideally cache the token and only refresh after expiry.
 // For caching token, need to break the Promise mechanism, which I have no clue how to do at moment.
@@ -24,7 +25,7 @@ async function main(){
         }
         
         sp = new SuperMetrics(allPosts);
-        console.log(JSON.stringify(sp.getMetrics()));
+        console.log(beautify(sp.getMetrics(), null,2,100));
         
     }catch(e){
         console.log(e);
