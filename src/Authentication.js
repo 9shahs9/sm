@@ -12,6 +12,7 @@ class Authenticator {
 
     token = null;
 
+    // Method to build request params and options.
     buildRequest() {
         // TODO: implement change over to a config based load of request params.
 
@@ -44,6 +45,7 @@ class Authenticator {
         return this.token;
     }
 
+    // Fronting method for the caller.
     async getToken() {
         try {
             if (this.token === null) {
