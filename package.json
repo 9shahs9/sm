@@ -23,5 +23,13 @@
     "axios": "^0.21.4",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9shahs9/sm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/9shahs9/sm/issues"
+  },
+  "homepage": "https://github.com/9shahs9/sm#readme"
 }
