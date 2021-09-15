@@ -1,4 +1,4 @@
-// TODO: To replace request-promise with a axios as request-promise is deprecated.
+// TODO: To replace deprecated request-promise with a axios.
 // request-promise module for making async http calls to sm uris.
 
 rp = require('request-promise');
