@@ -19,11 +19,13 @@ async function main(){
         console.log(token);
         const posts = new Posts();
         
+        // Loop through 10 times, to fetch posts.
+
         for (let i = 0; i < 10; i++){
             let myPosts = JSON.parse(await posts.getPosts(token,i)).data.posts;
             allPosts = allPosts.concat(myPosts);
         }
-        
+        //Compute the required metrics in SuperMetrics class.
         sp = new SuperMetrics(allPosts);
         console.log(beautify(sp.getMetrics(), null,2,100));
         
