@@ -19,6 +19,6 @@ TECHNICAL DEBT:
 5. MonthlyMessageMetrics can be broken down into two modules, 1) AveragePostLength and 2) MaxLengths, but as the processing is similar, thought I can save one more loop through the posts.
 6. Error Handling is not implemented to be production ready.
 7. Parameterize number of times posts api is going to be called.
-
+8. Code optimisations can be done, but in general a better approach will be delink the auth/post retreival process with computing metrics process. As an example once the posts are retreived, store them in MongoDB and write mongoDB nodejs scripts to do the aggregations and computations might be far more efficient.
 ===========================================================================================================
 
